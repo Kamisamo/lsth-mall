@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lsth.mall.dao.TbIndexSlideAdMapper">
+  <resultMap id="BaseResultMap" type="com.lsth.mall.entity.TbIndexSlideAd">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="alt" jdbcType="VARCHAR" property="alt" />
+    <result column="clog" jdbcType="VARCHAR" property="clog" />
+    <result column="ext1" jdbcType="VARCHAR" property="ext1" />
+    <result column="href" jdbcType="VARCHAR" property="href" />
+    <result column="logV" jdbcType="VARCHAR" property="logv" />
+    <result column="src" jdbcType="VARCHAR" property="src" />
+    <result column="srcB" jdbcType="VARCHAR" property="srcb" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="sort_order" jdbcType="INTEGER" property="sortOrder" />
+    <result column="logDomain" jdbcType="VARCHAR" property="logdomain" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="updated" jdbcType="TIMESTAMP" property="updated" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, alt, clog, ext1, href, logV, src, srcB, status, sort_order, logDomain, created, 
+    updated
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_index_slide_ad
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tb_index_slide_ad
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lsth.mall.entity.TbIndexSlideAd">
+    insert into tb_index_slide_ad (id, alt, clog, 
+      ext1, href, logV, src, 
+      srcB, status, sort_order, 
+      logDomain, created, updated
+      )
+    values (#{id,jdbcType=BIGINT}, #{alt,jdbcType=VARCHAR}, #{clog,jdbcType=VARCHAR}, 
+      #{ext1,jdbcType=VARCHAR}, #{href,jdbcType=VARCHAR}, #{logv,jdbcType=VARCHAR}, #{src,jdbcType=VARCHAR}, 
+      #{srcb,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{sortOrder,jdbcType=INTEGER}, 
+      #{logdomain,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lsth.mall.entity.TbIndexSlideAd">
+    insert into tb_index_slide_ad
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="alt != null">
+        alt,
+      </if>
+      <if test="clog != null">
+        clog,
+      </if>
+      <if test="ext1 != null">
+        ext1,
+      </if>
+      <if test="href != null">
+        href,
+      </if>
+      <if test="logv != null">
+        logV,
+      </if>
+      <if test="src != null">
+        src,
+      </if>
+      <if test="srcb != null">
+        srcB,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="sortOrder != null">
+        sort_order,
+      </if>
+      <if test="logdomain != null">
+        logDomain,
+      </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="updated != null">
+        updated,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="alt != null">
+        #{alt,jdbcType=VARCHAR},
+      </if>
+      <if test="clog != null">
+        #{clog,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null">
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="href != null">
+        #{href,jdbcType=VARCHAR},
+      </if>
+      <if test="logv != null">
+        #{logv,jdbcType=VARCHAR},
+      </if>
+      <if test="src != null">
+        #{src,jdbcType=VARCHAR},
+      </if>
+      <if test="srcb != null">
+        #{srcb,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="sortOrder != null">
+        #{sortOrder,jdbcType=INTEGER},
+      </if>
+      <if test="logdomain != null">
+        #{logdomain,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null">
+        #{updated,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lsth.mall.entity.TbIndexSlideAd">
+    update tb_index_slide_ad
+    <set>
+      <if test="alt != null">
+        alt = #{alt,jdbcType=VARCHAR},
+      </if>
+      <if test="clog != null">
+        clog = #{clog,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1 != null">
+        ext1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="href != null">
+        href = #{href,jdbcType=VARCHAR},
+      </if>
+      <if test="logv != null">
+        logV = #{logv,jdbcType=VARCHAR},
+      </if>
+      <if test="src != null">
+        src = #{src,jdbcType=VARCHAR},
+      </if>
+      <if test="srcb != null">
+        srcB = #{srcb,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="sortOrder != null">
+        sort_order = #{sortOrder,jdbcType=INTEGER},
+      </if>
+      <if test="logdomain != null">
+        logDomain = #{logdomain,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null">
+        updated = #{updated,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lsth.mall.entity.TbIndexSlideAd">
+    update tb_index_slide_ad
+    set alt = #{alt,jdbcType=VARCHAR},
+      clog = #{clog,jdbcType=VARCHAR},
+      ext1 = #{ext1,jdbcType=VARCHAR},
+      href = #{href,jdbcType=VARCHAR},
+      logV = #{logv,jdbcType=VARCHAR},
+      src = #{src,jdbcType=VARCHAR},
+      srcB = #{srcb,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      sort_order = #{sortOrder,jdbcType=INTEGER},
+      logDomain = #{logdomain,jdbcType=VARCHAR},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
